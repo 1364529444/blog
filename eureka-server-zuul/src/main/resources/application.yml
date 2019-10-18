@@ -1,0 +1,17 @@
+server:
+  port: 7009
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:7001/eureka/
+spring:
+  application:
+    name: zuul
+zuul:
+  routes:
+    user:
+      path: /user/**
+      serviceId: user
+    order:
+      path: /order/**
+      serviceId: order
